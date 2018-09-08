@@ -1,4 +1,59 @@
 1.What is a gitignore file and what should it include for a Java project? 
+
+A gitignore file is the one which tells to ignore certain files, so temporary files like .class, .jar are not uploaded to git.
+For a java project, .gitignore file contains temporary files like compiled class file (.class), package files like .jar, ,zip.
+
+Example: A gitignore file created during when java project
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
 2.What does fast-forward in Git mean?
+
+Fast-forward is a type of merge done by git in a situation where git simply moves the HEAD pointer for that branch to the latest commit. 
+It means lets say I created a testbranch from master branch, did some changes in testbranch and pushed the changes to the master branch. 
+During this period nobody else has made any commit to the master branch, then git simply fast forwards the HEAD pointer from the last 
+saved commit to the latest commit performed by me.
+
+Bijayalaxmis-MacBook-Pro:assign-git bijayalaxmipanda$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Bijayalaxmis-MacBook-Pro:assign-git bijayalaxmipanda$ git branch
+* master
+  testbranch
+  testbranch2
+Bijayalaxmis-MacBook-Pro:assign-git bijayalaxmipanda$ git merge testbranch
+Updating 64f20e7..d5e8be1
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+
 3. Why should you have different branches?
+There are various reasons for which it is an ideal practice to have different branches:
+ - It will be feasible that everyone can work independently taking a snapshot from the main branch and then collaborate their changes without messing the main branch.
+ - Due to the concept of multiple branch, testing also can be carried out simultaneously without breaking other's work.
+ - As multiple people are working, it is easy to reach the project goal.
+ - Different branches makes life easier for a developer, tester to manage and maintain the product as we can have multiple branches for various release of the same product.
+
 4.In a project how many remote Git repositories do you usually have?
+Generally we have one Git repository in a project.
